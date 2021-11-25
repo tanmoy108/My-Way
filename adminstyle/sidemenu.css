@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#mainbox {
+    font-size: 1em;
+    cursor: pointer;
+    transition: all .6s;
+    display: inline;
+}
+
+.sidemenu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0px;
+    background-color: #222;
+    z-index: 1;
+    padding-top: 100px;
+    margin-right: 40px;
+    transition: all .5s;
+    overflow-x: hidden;
+}
+
+.sidemenu .circle {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    background: url(../image/img1.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.sidemenu h3 {
+    text-align: center;
+    color: rgb(209, 207, 207);
+    letter-spacing: 3px;
+}
+
+.sidemenu a {
+    text-decoration: none;
+    font-size: 1em;
+    color: rgb(143, 141, 141);
+    display: block;
+}
+
+.sidemenu .link {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+.sidemenu .link:hover {
+    color: white;
+    background-color: rgba(82, 82, 82, 0.39);
+}
+
+.sidemenu .closebutton {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 32px;
+    cursor: pointer;
+}

@@ -1,0 +1,448 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    /* font-family: 'Lato', sans-serif; */
+    /* font-family: 'Open Sans', sans-serif; */
+}
+/* page loader css start -----------------------------------------*/
+#loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: rgb(255, 255, 255) url(https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif) no-repeat center;
+    z-index: 99999;
+}
+/* page loader css end -------------------------------------------*/
+body
+{
+    position: relative;
+}
+/* Index start -------------------------------------------------- */
+
+.navbar {
+    background-color: #e7e8eb;
+    margin-bottom: 200px;
+}
+.scroll-color.scrolled
+{
+    background-color: #fdeddcc5;
+}
+.navbar ul a:hover
+{
+    border-bottom: 3px solid #FE5F3B;
+}
+.signinsignup a
+{
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+    text-decoration: none;
+}
+.signinsignup .signninbtn
+{
+    color: white;
+    background-color: #474FA0;
+}
+
+.image {
+    height: 80vh;
+    background-color: #e7e8eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.welcome {
+    margin-top: 7%;
+}
+
+.indexleft {
+    display: flex;
+    align-items: center;
+}
+
+.welcome .indexleft h1 {
+    font-weight: bolder;
+    font-size: 45px;
+}
+
+.welcome .indexleft p {
+    font-weight: bolder;
+    font-size: 14px;
+}
+
+.indexright img {
+    width: 100%;
+    height: auto;
+}
+
+.schedulebox {
+    height: max-content;
+    width: 100%;
+    background-color: #ffffff;
+    position: inherit;
+    border-radius: 10px;
+    bottom: 40px;
+    box-shadow: 2px 2px 20px grey;
+    display: flex;
+    justify-content: center;
+}
+.scheduleinner
+{
+    margin-top: 14px;
+}
+.schedulebox .scheduleinner input {
+    padding-left: 25px;
+    border-radius: 5px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    outline: 0;
+    border: none;
+}
+
+.schedulebox .scheduleinner i {
+    position: absolute;
+    bottom: 34px;
+    margin-left: 7px;
+    color: rgb(110, 110, 110);
+}
+.schdulebutton
+{
+    text-align: center;
+}
+.schdulebutton input
+{
+    color: white;
+    background-color: #474FA0;
+    font-weight: bold;
+    border-radius: 7px;
+    width: 100%;
+    height: 160%;
+}
+.schdulebutton input:hover
+{
+    color:#474FA0;
+    background-color: white;
+    box-shadow: 2px 2px 20px rgb(194, 194, 194);
+}
+.listcol
+{
+    width: 200px;
+    float: left;
+}
+@media screen and (max-width:575px) {
+    .indexright img {
+        display: none;
+    }
+    .schedulebox {
+        background-color: #FE5F3B;
+    }
+}
+
+/* Index end  -----------------------------------------------------*/
+
+/* signin start ---------------------------------------------------*/
+.image2 {
+    height: 100vh;
+    background-image: linear-gradient(to right, rgba(24, 24, 24, 0.465), rgba(24, 24, 24, 0.65)), url(image/bus_2.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: contrast(130%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rounded_box {
+    border-radius: 20px;
+    background: #f7f8f6a9;
+    width: 900px;
+    height: 500px;
+}
+
+.rounded_box .signinright {
+    border-left: 2px solid rgb(151, 151, 151);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rounded_box .signinleft,.rounded_box .signupright  {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.signinright .input-container,.signupleft .input-container  {
+    display: flex;
+    align-items: center;
+}
+
+.rounded_box .signinright form input,.rounded_box .signupleft form input  {
+    background-color: rgba(214, 214, 214, 0.781);
+    width: 100%;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    border: 0.5px solid rgb(151, 151, 151);
+    padding-left: 30px;
+    outline: none;
+}
+
+.rounded_box .signinright form .input-container label,.rounded_box .signupleft form .input-container label  {
+    position: absolute;
+    transition: 0.5s;
+    font-size: 16px;
+}
+
+.signinright .input-container i,.signupleft .input-container i  {
+    position: absolute;
+    padding-left: 5px;
+    color: rgb(110, 110, 110);
+}
+
+.signinbtn,.signupbtn  {
+    width: 100%;
+    background-color: #01a906;
+    color: white;
+}
+
+.signinleft img,.signupright img  {
+    width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width:768px) {
+    .signinleft img,.signupright img  {
+        display: none;
+    }
+}
+
+/* signin end -----------------------------------------------------*/
+
+/* signup start ---------------------------------------------------*/
+.rounded_box .signupleft {
+    border-right: 2px solid rgb(151, 151, 151);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* signup end */
+
+/* description start */
+
+.description h5
+{
+    color: #a8a8a8;
+}
+.description h3
+{
+    font-weight: bold;
+}
+.card
+{
+    border: none;
+}
+.box1,.box2,.box3,.box4
+{
+    height: 100px;
+    width: 100px;
+    background-color: #F8F7F7;
+    border-radius: 15px;
+    border: 5px solid white;
+    box-shadow: 1px 1px 30px rgb(206, 204, 204);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box1,.box3 i
+{
+    color:#FE5C3D;
+}
+.box2,.box4
+{
+    background:linear-gradient(to bottom, #FE5C3D,#FE8624);
+    border: none;
+}
+.box2,.box4 i
+{
+    color: #fff;
+}
+.card .card-title
+{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.card .card-text
+{
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(151, 148, 148);
+}
+
+/* description end */
+
+/* team start */
+.team
+{
+    margin-top: 100px ;
+}
+.team .h3
+{
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.team .p
+{
+    text-align: center;
+    display: block;
+    margin-bottom: 70px;
+    font-weight: bold;
+    color: #858585;
+}
+
+.team .teamcard
+{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    perspective: 1000px;
+    -webkit-perspective: 1000px ;
+}
+.team .teamimgbox
+{
+    width: 100%;
+    height: 250px;
+    transition: all .5s ease;
+    border-radius: 5px;
+}
+.team .one
+{
+    background-image: url(image/img1.png);
+    background-size: cover;
+    background-position: center center;
+}
+.team .two
+{
+    background-image: url(image/img2.jpeg);
+    background-size: cover;
+    background-position: center center;
+}
+.team .three
+{
+    background-image: url(https://media.istockphoto.com/photos/fit-man-standing-outdoors-in-a-city-picture-id1299360127?b=1&k=20&m=1299360127&s=170667a&w=0&h=1Rvw_UPTnj1LkB543cuCjiLM0xbIdjjin0rw6yaL8bc=);
+    background-size: cover;
+    background-position: center center;
+}
+.team .teamcontent
+{
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    text-align: center;
+    transition: all .5s ease;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: rotateY(-90deg);
+    color: white;
+    background:linear-gradient(to bottom, #FE5C3D,#FE8624);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.team .teamcontent a i
+{
+    color: white;
+}
+.team .teamcard:hover > .teamimgbox
+{
+    opacity: 0;
+    transform: translateX(-110px) rotateY(90deg);
+}
+.team .teamcard:hover > .teamcontent
+{
+    opacity: 1;
+    transform: rotateY(0);
+}
+/* team end */
+.animationbox
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+}
+.anibox
+{
+    width: 20px;
+    height: 20px;
+    animation: animbox 15s linear infinite;
+}
+
+.anibox:nth-child(1)
+{
+    animation-delay: 1s;
+    background-color: #474FA0;
+}
+.anibox:nth-child(2)
+{
+    animation-delay: 3s;
+    background-color: #FE8624;
+}
+.anibox:nth-child(3)
+{
+    animation-delay: 2s;
+    background-color: #01a906;
+}
+.anibox:nth-child(4)
+{
+    animation-delay: 4s;
+    background-color: #FE5C3D;
+}
+.anibox:nth-child(5)
+{
+    animation-delay: 5s;
+    background-color: #474FA0;
+}
+@keyframes animbox
+{
+    0%
+    {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    40%
+    {
+        transform: translateX(20vh);
+        opacity: 1;
+    }
+    70%
+    {
+        transform: rotate(40deg);
+        opacity: 1;
+    }
+    100%
+    {
+        transform: translateY(80vh);
+        opacity: 0;
+    }
+}

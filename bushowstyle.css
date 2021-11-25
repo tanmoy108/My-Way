@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    /* font-family: 'Lato', sans-serif; */
+}
+/* Index start -------------------------------------------------- */
+.btn
+{
+    width: 100%;
+}
+.rounded
+{
+    background-color: gainsboro;
+}
+h4
+{
+    color: rgb(93, 93, 93);
+    text-align: center;
+}
+.bold
+{
+    text-align: center;
+    color: rgb(93, 93, 93);
+    display: block;
+}
