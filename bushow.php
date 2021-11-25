@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>Bus Show</title>
   <?php include_once("includes/link.php"); ?>
   <link rel="stylesheet" href="bushowstyle.css">
 </head>

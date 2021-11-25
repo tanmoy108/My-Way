@@ -23,7 +23,7 @@ if(isset($_POST['adminbutton']))
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Admin Login</title>
     <?php include_once("includes/link.php"); ?>
     <link rel="stylesheet" href="adminstyle/adminlogin.css">
 </head>

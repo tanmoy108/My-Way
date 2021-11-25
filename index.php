@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Bus Ticket Reservation</title>
+  <title>MY WAY</title>
   <?php include_once("includes/link.php"); ?>
   <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
