@@ -5,7 +5,7 @@
   <title>MY WAY</title>
   <?php include_once("includes/link.php"); ?>
   <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body onload="myfunction()">
@@ -25,9 +25,7 @@
         <li class="nav-item px-3 "><a class="nav-link text-uppercase font-weight-bold" href="team.php">Team</a></li>
       </ul>
       <div class="signinsignup text-center">
-        <a class="btn" href="signup.php">Sign up</a>
-        <a class="btn signninbtn px-3 py-2" href="signin.php">Sign in</a>
-
+        <a class="btn signninbtn px-3 py-2" href="signinsignup.php">SIGNIN / SIGNUP</a>
       </div>
     </div>
   </nav>
@@ -185,7 +183,7 @@
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <?php include_once("includes/script.php"); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="autocompleteajax.js" ></script>
+  <script src="js/autocompleteajax.js" ></script>
   <script>
   var date = new Date();
   var tdate = date.getDate(); 

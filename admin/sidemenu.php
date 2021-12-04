@@ -63,7 +63,7 @@
             border-radius: 50%;
             margin-left: 100px;
             margin-bottom: 50px;
-            background: url(../image/img1.png);
+            background: url(../image/tanmoy.png);
             background-position: center;
             background-size: cover;
         }
