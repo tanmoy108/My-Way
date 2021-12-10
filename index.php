@@ -1,3 +1,21 @@
+<?php 
+include("function.php");
+$objindex = new busapp();
+session_start();
+if(isset($_SESSION['id']))
+{
+  $uid = $_SESSION['id'];
+  $uname = $_SESSION['username'];
+}
+
+if(isset($_GET['userlogout']))
+    {
+        if($_GET['userlogout']=='logout')
+        {
+          $objindex->user_logout();
+        }
+    }
+?>
 <!doctype html>
 <html lang="en">
 
@@ -15,21 +33,54 @@
   </div>
   <!-- navbar -->
   <nav class="navbar navbar-expand-md navbar-light fixed-top scroll-color">
-    <a class="navbar-brand pl-3 " href="index.php"><i class="fab fa-amazon fa-3x text-dark "></i></a>
-    <button type="button" class="navbar-toggler bg-light" data-toggle="collapse" data-target="#nav"> <span
-        class="navbar-toggler-icon"></span> </button>
+    <a class="navbar-brand" href="index.php"><i class="fab fa-amazon fa-3x text-dark "></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
     <div class="collapse navbar-collapse" id="nav">
-      <ul class="navbar-nav mx-auto text-center ">
-        <li class="nav-item px-3 "><a class="nav-link text-uppercase font-weight-bold" href="index.php">Home</a></li>
-        <li class="nav-item px-3 "><a class="nav-link text-uppercase font-weight-bold" href="blog.php">Blog</a></li>
-        <li class="nav-item px-3 "><a class="nav-link text-uppercase font-weight-bold" href="team.php">Team</a></li>
+      <ul class="navbar-nav mr-auto mx-auto text-center ">
+        <li class="nav-item mx-4">
+          <a class="nav-link text-uppercase font-weight-bold" href="index.php">Home</a>
+        </li>
+        <li class="nav-item mx-4">
+          <a class="nav-link text-uppercase font-weight-bold" href="#">Blog</a>
+        </li>
+        <li class="nav-item mx-4">
+          <a class="nav-link text-uppercase font-weight-bold" href="team.php">Team</a>
+        </li>
       </ul>
-      <div class="signinsignup text-center">
-        <a class="btn signninbtn px-3 py-2" href="signinsignup.php">SIGNIN / SIGNUP</a>
+      <?php 
+      
+      if(isset($uid) == null)
+        { ?>
+          <div class="signinsignup text-center" id="hello">
+            <a class="btn signninbtn px-3 py-2" href="signinsignup.php">JOIN US !</a>
+          </div>
+      <?php         
+        }
+        else{ ?>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+         <?php echo($uname); ?>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="?userlogout=logout">Logout</a>
+        </div>
       </div>
+      <?php
+        }
+
+?>
+
     </div>
   </nav>
   <!-- end of navbar -->
+
+
   <!-- welcome part start -->
   <section class="container-fluid image">
     <div class="container">
@@ -179,28 +230,13 @@
 
   <!-- Description end -->
 
-  <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <?php include_once("includes/script.php"); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="js/autocompleteajax.js" ></script>
-  <script>
-  var date = new Date();
-  var tdate = date.getDate(); 
-  if(tdate < 10)
-  {
-    tdate = "0" + tdate;
-  }
-  var month =date.getMonth()+1;
-  if(month < 10)
-  {
-    month = "0" + month;
-  }
-  var year = date.getUTCFullYear();
-var minDate = year + "-" + month + "-" + tdate;
-  document.getElementById("dateroute").setAttribute('min',minDate);
-  console.log(minDate);
-  </script>
+  <script src="js/date.js"></script>
+  <script src="js/autocompleteajax.js"></script>
+
+ 
 
 </body>
 

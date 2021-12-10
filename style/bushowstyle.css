@@ -5,6 +5,31 @@
     box-sizing: border-box;
     /* font-family: 'Lato', sans-serif; */
 }
+
+/* navbar start */
+.navbar {
+    background-color: #e7e8eb;
+}
+.scroll-color.scrolled
+{
+    background-color: #fdeddcc5;
+}
+.nav-item .nav-link:hover
+{
+    border-bottom: 3px solid #FE5F3B;
+}
+.signinsignup a
+{
+    font-weight: bold;
+    color: rgb(110, 110, 110);
+    text-decoration: none;
+}
+.signinsignup .signninbtn
+{
+    color: white;
+    background-color: #474FA0;
+}
+/* navbar end */
 /* Index start -------------------------------------------------- */
 .btn
 {

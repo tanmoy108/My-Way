@@ -24,24 +24,27 @@ if(isset($_POST['submit']))
 
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.php">Navbar</a>
+    <a class="navbar-brand" href="index.php"><i class="fab fa-amazon fa-3x text-dark "></i></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto mx-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="index.php">Home</a>
+      <ul class="navbar-nav mr-auto mx-auto text-center ">
+        <li class="nav-item mx-4">
+          <a class="nav-link text-uppercase font-weight-bold" href="index.php">Home</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Blog</a>
+        <li class="nav-item mx-4">
+          <a class="nav-link text-uppercase font-weight-bold" href="#">Blog</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="team.php">Team</a>
+        <li class="nav-item mx-4">
+          <a class="nav-link text-uppercase font-weight-bold" href="team.php">Team</a>
         </li>
       </ul>
+      <div class="signinsignup text-center">
+        <a class="btn signninbtn px-3 py-2" href="signinsignup.php">JOIN US !</a>
+      </div>
     </div>
   </nav>
   <!-- end of navbar -->
@@ -96,10 +99,17 @@ if(isset($_POST['submit']))
   <div class="container rounded p-3 mt-3">
     <div class="row">
       <div class="col-lg-3 col-md-3 col-sm-12 d-flex align-items-center">
-        <img class="rounded" src="image/bus_1.jpg" alt="" width="100%">
+        <img class="rounded" src="admin/upload/<?php echo $row['picture'];?>" alt="" width="100%">
       </div>
       <div class="col-lg-5 col-md-5 col-sm-12 ">
         <h3><?php echo $row['bus_name']?></h3>
+
+        <?php 
+        $busid = $row['bus_id'];
+        $result2 = $obj->priceshow("SELECT * FROM bus_inside WHERE bus_id=$busid");
+        $row2=mysqli_fetch_assoc($result2);
+        ?>
+
         <strong>Type: <small><?php echo $row['bus_type']?></small> </strong><br>
         <strong>Departure Time: <small><?php echo $row['departure']?></small> </strong><br>
         <strong>Arrival Time: <small><?php echo $row['arrival']?></small> </strong><br>
@@ -107,7 +117,7 @@ if(isset($_POST['submit']))
       </div>
       <div class="col-lg-4 col-md-4 col-sm-12 d-flex align-items-end justify-content-end">
         <div class="d-flex align-items-center flex-column">
-          <h5>TK 1200</h5>
+          <h5><?php echo $row2['price']?> TK</h5>
           <button class="btn btn-danger">View Seats</button>
         </div>
       </div>
@@ -137,27 +147,8 @@ if(isset($_POST['submit']))
 
   <?php include_once("includes/script.php"); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/date.js" ></script>
   <script src="autocompleteajax.js"></script>
-  <script>
-  var date = new Date();
-  var tdate = date.getDate(); 
-  if(tdate < 10)
-  {
-    tdate = "0" + tdate;
-  }
-  var month =date.getMonth()+1;
-  if(month < 10)
-  {
-    month = "0" + month;
-  }
-  var year = date.getUTCFullYear();
-var minDate = year + "-" + month + "-" + tdate;
-  document.getElementById("dateroute").setAttribute('min',minDate);
-  console.log(minDate);
-  </script>
-
-
-
 
 </body>
 

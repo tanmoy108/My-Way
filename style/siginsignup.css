@@ -100,13 +100,13 @@ form.sign-up-form {
 }
 
 .input-field input {
-    background: none;
+    color: rgb(110, 110, 110);
+    background: transparent;
     outline: none;
     border: none;
     line-height: 1;
     font-weight: 300;
     font-size: 1.1rem;
-    color: rgb(124, 123, 123);
 }
 
 .input-field input::placeholder {
@@ -132,6 +132,12 @@ form.sign-up-form {
 
 .btn:hover {
     background-color: #FE8624;
+}
+
+.errormsg
+{
+    color: red;
+    text-align: left;
 }
 
 .social-text {
@@ -296,7 +302,6 @@ form.sign-up-form {
     }
 
     .panels-container {
-        z-index: 10;
         grid-template-columns:  1fr;
         grid-template-rows: 1fr 2fr 1fr;
     }

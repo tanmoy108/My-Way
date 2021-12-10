@@ -57,6 +57,19 @@ input[type="email"], input[type="password"]
 .submitbtn
 {
     width: 100%;
+    
+}
+.submitbtn .btn
+{
+    background-color: #474FA0;
+    color:white;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.submitbtn .btn:hover
+{
+    background-color:white ;
+    color:#474FA0;
 }
 button
 {
@@ -64,6 +77,14 @@ button
 }
 @media screen and (max-width:767px) {
     .col-lg-4  {
-        display: none;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        border-bottom-left-radius: 0px;
+        height: 200px;
     }
+    .col-lg-8
+{
+    padding-bottom: 100px;
+    background-attachment: red;
+}
 }

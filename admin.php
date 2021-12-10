@@ -5,7 +5,7 @@ $objadmindata = new busapp();
 
 if(isset($_POST['adminbutton']))
 {
-    $objadmindata->admin_login($_POST);
+    $return=$objadmindata->admin_login($_POST);
 }
     session_start();
     if(isset( $_SESSION['adminid']))
@@ -52,9 +52,19 @@ if(isset($_POST['adminbutton']))
                             placeholder="Password" required>
                     </div>
                     <div class="submitbtn">
-                        <button type="submit" name="adminbutton" class="btn btn-primary mt-3">Submit</button>
+                        <button type="submit" name="adminbutton" class="btn mt-3">LOGIN</button>
                     </div>
+
+                    <?php
+
+                if(isset($return))
+                { ?>
+                <p><?php echo($return);?></p>
+                <?php }
+                ?>
                 </form>
+                
+
                </div>
             </div>
         </div>

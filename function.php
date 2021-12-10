@@ -32,14 +32,19 @@ Class busapp
             $admin_info = mysqli_query($this->conn,$query);
             if($admin_info)
             {
-                header("location:admin/dashcondition.php");
                 $admin_data=mysqli_fetch_assoc($admin_info);
-                session_start();
-                $_SESSION['adminid']=$admin_data['id'];
-                $_SESSION['adminname']=$admin_data['admin_name'];
+                if(isset($admin_data['admin_email'])==$admin_email)
+                {
+                    header("location:admin/dashcondition.php");
+                    session_start();
+                    $_SESSION['adminid']=$admin_data['id'];
+                    $_SESSION['adminname']=$admin_data['admin_name'];
+                }
             }
-
+            else
+            return "Alert !!";
         }
+        
     }
     public function admin_logout()
     {
@@ -92,9 +97,9 @@ Class busapp
                             Action
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item seatbooking" href="#">Seat Booking</a>
-                            <a class="dropdown-item update" id="'.$row->bus_id.'">Edit</a>
-                            <a class="dropdown-item delete" id="'.$row->bus_id.'">Delete</a>
+                            <a class="dropdown-item seatbooking" href="seatbooking.php?status=booking&&id='.$row->bus_id.'">Seat Booking</a>
+                            <a class="dropdown-item update" href="#" id="'.$row->bus_id.'">Edit</a>
+                            <a class="dropdown-item delete" href="#" id="'.$row->bus_id.'">Delete</a>
                         </div>
                     </div>
                 </td>
@@ -122,6 +127,17 @@ Class busapp
         if(mysqli_query($this->conn,$query))
         {
             move_uploaded_file($tmp_name,'upload/'.$picture);
+        }
+    }
+
+    public function show_bus_id($id)
+    {
+        $query = "SELECT * FROM add_bus WHERE bus_id=$id";
+        if(mysqli_query($this->conn,$query))
+        {
+            $return = mysqli_query($this->conn,$query);
+            $fetchdata = mysqli_fetch_assoc($return);
+            return $fetchdata;
         }
     }
     
@@ -217,6 +233,118 @@ Class busapp
             $result = mysqli_query($this->conn,$query);
             return $result;
         }
+    }
+
+
+    public function priceshow($query)
+    {
+        if(mysqli_query($this->conn,$query))
+        {
+            $result = mysqli_query($this->conn,$query);
+            return $result;
+        }
+    }
+    
+
+    public function adduser($data)
+    {
+        $username = $data['username'];
+        $email = $data['email'];
+        $password = md5($data['password']);
+        $select = mysqli_query($this->conn, "SELECT `email` FROM `users` WHERE `email`='$email'") or exit(mysqli_error($this->conn));
+        if(mysqli_num_rows($select)) 
+            {
+                ?>
+<script>
+    alert('This email is already being used');
+</script>
+<?php }
+        else
+            {
+                $query = "INSERT INTO `users`(`username`, `email`, `password`) VALUES ('$username','$email','$password')";
+                
+                if(mysqli_query($this->conn,$query))
+                    {
+                        return "Accout Created";
+                    }
+                else
+                    {
+                        return "Can't Created";
+                    }
+            }
+    }
+    public function user_login($data)
+    {
+        $email = $data['emailsignin'];
+        $password = md5($data['passwordsignin']);
+
+        $query = "SELECT * FROM users WHERE email='$email' && password='$password'";
+        
+        if(mysqli_query($this->conn,$query))
+        {
+            $user_info = mysqli_query($this->conn,$query);
+            if($user_info)
+            {
+                
+                $user_data=mysqli_fetch_assoc($user_info);
+
+                if(isset($user_data))
+                {
+                    if($user_data['email'] == $email)
+                {
+                    header("location:index.php");
+                    session_start();
+                    $_SESSION['id'] = $user_data['id'];
+                    $_SESSION['username'] = $user_data['username'];
+                }
+                }
+                else
+                return "Please fill up correctly";
+            }
+        }
+    }
+    public function user_logout()
+    {
+        unset($_SESSION['id']);
+        unset($_SESSION['uname']);
+        header("location:signinsignup.php");
+    }
+
+
+    public function add_price($data)
+    {
+        $id = $data['id'];
+        $name = $data['bus_name'];
+        $price = $data['price'];
+
+        $query = "INSERT INTO bus_inside(bus_id,bus_name,price)VALUES($id,'$name',$price)";
+        if(mysqli_query($this->conn,$query))
+        {
+            echo "success price";
+        }
+    }
+
+
+    public function add_boarding($data)
+    {
+        $id = $data['id'];
+        $name = $data['bus_name'];
+        $bname = $data['name'];
+        $number = count($bname);
+        if($number > 0)  
+    {  
+      for($i=0; $i<$number; $i++)  
+      {  
+           if(trim($bname[$i] != ''))  
+           {  
+                $sql = "INSERT INTO bus_boarding(bus_id,bus_name,boarding_pnt) VALUES( $id,'$name','$bname[$i]')";  
+                if(mysqli_query($this->conn,$sql))
+                {
+                    echo "success boarding";
+                } 
+           }  
+      }   
+    }  
     }
 }
 ?>

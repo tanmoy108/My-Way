@@ -21,15 +21,15 @@ body
 }
 /* Index start -------------------------------------------------- */
 
+/* navbar start */
 .navbar {
     background-color: #e7e8eb;
-    margin-bottom: 200px;
 }
 .scroll-color.scrolled
 {
     background-color: #fdeddcc5;
 }
-.navbar ul a:hover
+.nav-item .nav-link:hover
 {
     border-bottom: 3px solid #FE5F3B;
 }
@@ -44,14 +44,17 @@ body
     color: white;
     background-color: #474FA0;
 }
+/* navbar end */
+
+
 
 .image {
     height: 80vh;
-    background-color: #e7e8eb;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    background-color: #e7e8eb;
 }
 
 .welcome {
