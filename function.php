@@ -315,9 +315,10 @@ Class busapp
     {
         $id = $data['id'];
         $name = $data['bus_name'];
+        $seatnumber = $data['seatnumber'];
         $price = $data['price'];
 
-        $query = "INSERT INTO bus_inside(bus_id,bus_name,price)VALUES($id,'$name',$price)";
+        $query = "INSERT INTO bus_inside(bus_id,bus_name,price,seatsize)VALUES($id,'$name',$price,$seatnumber)";
         if(mysqli_query($this->conn,$query))
         {
             echo "success price";
@@ -345,6 +346,58 @@ Class busapp
            }  
       }   
     }  
+    }
+
+    public function view_seats($id)
+    {
+        $query="SELECT * FROM bus_inside WHERE bus_id=$id";
+        if(mysqli_query($this->conn,$query))
+        {
+            $seat = mysqli_query($this->conn,$query);
+            return $seat;
+        
+    }
+
+    }
+
+
+    public function add_seat($data)
+    {
+        $busid=$data['busidno'];
+        $busname=$data['busnames'];
+        $userid=$data['useridno'];
+        $username=$data['usernames'];
+        $boarding = $data['busboarding'];
+        $seatno = $data['seatno'];
+        $amount = $data['seatamount'];
+        $seatnoe = $data['seatnoe'];
+
+        $query = "INSERT INTO seat(bus_id,bus_name,user_id,user_name,boardingpnt,seatno,amount,seatnoextra) VALUES($busid,'$busname',$userid,'$username','$boarding','$seatno','$amount','$seatnoe')";
+
+        if(mysqli_query($this->conn , $query))//query send
+        {
+            return "Information Added Successfully";
+        }
+    }
+    public function displayseat($data)
+    {
+        $query = "SELECT * FROM seat Where bus_id=$data ORDER BY id DESC";
+
+        if(mysqli_query($this->conn,$query))
+        {
+            $returndata = mysqli_query($this->conn,$query);
+            return $returndata;
+        }
+    }
+
+    public function boardingpoint($data)
+    {
+        $query ="SELECT * FROM bus_boarding WHERE bus_id=$data";
+        if(mysqli_query($this->conn,$query))
+        {
+            $returndata = mysqli_query($this->conn,$query);
+            return $returndata;
+        }
     }
 }
 ?>

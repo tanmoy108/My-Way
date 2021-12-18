@@ -1,6 +1,14 @@
 <?php
     include("../function.php");
     $objbooking  = new busapp();
+
+    session_start();
+    $id = $_SESSION['adminid'];
+    $name = $_SESSION['adminname'];
+    if($id == null)
+    {
+        header("location:../admin.php");
+    }
     if(isset($_GET['status']))
     {
         if($_GET['status']='booking')
@@ -56,6 +64,9 @@
           <Form class="forminput" name="add_info" id="add_info" method="post">
             <input type="hidden" name="id" id="id" value="<?php echo $recvdata['bus_id']; ?>">
             <input type="hidden" name="bus_name" id="bus_name" value="<?php echo $recvdata['bus_name']; ?>">
+            <label for=""> <strong>Seat number:</strong></label>
+            <input class="form-control mb-3" type="number" name="seatnumber" id="seatnumber" placeholder="Enter Seat Number"
+              pattern="[0-9]" required>
             <label for=""> <strong>Seat Price:</strong></label>
             <input class="form-control mb-3" type="number" name="price" id="price" placeholder="Enter Price"
               pattern="[0-9]" required>

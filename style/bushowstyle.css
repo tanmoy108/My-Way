@@ -1,52 +1,98 @@
 * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
-    /* font-family: 'Lato', sans-serif; */
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
-
-/* navbar start */
-.navbar {
-    background-color: #e7e8eb;
+/* schedule start .............. */
+.busearch {
+  background: linear-gradient(#fe6c32d0, #ff780a3f),
+    url(../image/road.jpg);
+  height: 70vh;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.scroll-color.scrolled
-{
-    background-color: #fdeddcc5;
+.busearch input[type="text"],input[type="date"] {
+  padding-left: 25px;
+  border-radius: 5px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  outline: 0;
+  border: none;
 }
-.nav-item .nav-link:hover
-{
-    border-bottom: 3px solid #FE5F3B;
+.busearch i {
+  position: absolute;
+  top: 17px;
+  margin-left: 7px;
+  color: rgb(110, 110, 110);
 }
-.signinsignup a
-{
-    font-weight: bold;
-    color: rgb(110, 110, 110);
-    text-decoration: none;
-}
-.signinsignup .signninbtn
-{
+.searchbtn{
     color: white;
-    background-color: #474FA0;
-}
-/* navbar end */
-/* Index start -------------------------------------------------- */
-.btn
-{
+    background-color: #6B32FE;
+    font-weight: bold;
+    border-radius: 7px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    height: 50px;
     width: 100%;
 }
-.rounded
-{
-    background-color: gainsboro;
+.searchbtn:hover {
+  color: white;
+  background-color: #325ffe;
 }
-h4
+
+/* schedule end ............. */
+.destinationame
 {
-    color: rgb(93, 93, 93);
-    text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #2f2f2f;
+  text-align: center;
 }
-.bold
+.destinationdate {
+  text-align: center;
+  color: rgb(110, 110, 110);
+  display: block;
+  font-size: 20px;
+}
+.alert
 {
-    text-align: center;
-    color: rgb(93, 93, 93);
-    display: block;
+  font: 20px;
+  color: #2f2f2f;
+  font-weight: bold;
+}
+.roundedbox {
+  background-color: rgb(232, 240, 255);
+  width: 70%;
+  border-radius:10px ;
+}
+.roundedbox .info
+{
+  color: #2f2f2f;
+}
+.roundedbox .info h3
+{
+  font-weight: bold;
+  font-size: 20px;
+}
+.roundedbox .info small
+{
+  font-size: 16px;
+  margin-left: 10px;
+}
+.seatbtn {
+  background: linear-gradient(to left, #FE6B32, #ff780a);
+  font-weight: bold;
+  color: white;
+}
+.seatbtn:hover
+{
+  color: white;
+  background: linear-gradient(to left, #ff780a,#FE6B32);
+
 }

@@ -1,266 +1,477 @@
 * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
-    /* font-family: 'Lato', sans-serif; */
-    /* font-family: 'Open Sans', sans-serif; */
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+  scroll-behavior: smooth;
 }
+
 /* page loader css start -----------------------------------------*/
 #loading {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: rgb(255, 255, 255) url(https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif) no-repeat center;
-    z-index: 99999;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgb(255, 255, 255)
+    url(https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif)
+    no-repeat center;
+  z-index: 99999;
 }
 /* page loader css end -------------------------------------------*/
-body
-{
-    position: relative;
+body {
+  position: relative;
 }
-/* Index start -------------------------------------------------- */
 
 /* navbar start */
 .navbar {
-    background-color: #e7e8eb;
+  background-color: #e7e8eb;
 }
-.scroll-color.scrolled
-{
-    background-color: #fdeddcc5;
+.scroll-color.scrolled {
+  background-color: #fffffffb;
 }
-.nav-item .nav-link:hover
+.nav-item .nav-link
 {
-    border-bottom: 3px solid #FE5F3B;
+ position: relative;
 }
-.signinsignup a
+.nav-item a
 {
-    font-weight: bold;
-    color: rgb(110, 110, 110);
-    text-decoration: none;
+    font-weight: 700px;
+    color:#2f2f2f;
 }
-.signinsignup .signninbtn
-{
+.nav-item .nav-link::after{
+    content: "";
+    width:0%;
+    height: 3px;
+    position: absolute;
+    bottom: -10%;
+    left: 0%;
+    transition: 0.3s;
+}
+.nav-item .nav-link:hover:after{
+    width:100%;
+    background-color: #FE6B32;
+}
+.signinsignup .signninbtn {
+  color: white;
+  background-color: #6B32FE;
+  font-weight: bold;
+}
+.signinsignup .signninbtn:hover{
     color: white;
-    background-color: #474FA0;
+    background-color: #325FFE;
 }
 /* navbar end */
 
-
+/* welcome start .......................... */
 
 .image {
-    height: 80vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background-color: #e7e8eb;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #e7e8eb;
 }
 
 .welcome {
-    margin-top: 7%;
+  margin-top: 7%;
 }
 
 .indexleft {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .welcome .indexleft h1 {
-    font-weight: bolder;
-    font-size: 45px;
+  font-weight: bolder;
+  font-size: 48px;
+  color:#2f2f2f;
 }
 
 .welcome .indexleft p {
-    font-weight: bolder;
-    font-size: 14px;
+  font-size: 20px;
+  color:#2f2f2f;
 }
 
 .indexright img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
+/* welcome end .......................... */
+
+/* schedule start ............................ */
 .schedulebox {
-    height: max-content;
-    width: 100%;
-    background-color: #ffffff;
-    position: inherit;
-    border-radius: 10px;
-    bottom: 40px;
-    box-shadow: 2px 2px 20px grey;
-    display: flex;
-    justify-content: center;
+  height: max-content;
+  width: 100%;
+  background-color: #ffffff;
+  position: inherit;
+  border-radius: 10px;
+  bottom: 40px;
+  box-shadow: 2px 2px 20px rgb(173, 173, 173);
+  display: flex;
+  justify-content: center;
 }
-.scheduleinner
-{
-    margin-top: 14px;
+.scheduleinner {
+  margin-top: 14px;
 }
 .schedulebox .scheduleinner input {
-    padding-left: 25px;
-    border-radius: 5px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    outline: 0;
-    border: none;
+  padding-left: 25px;
+  border-radius: 5px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  outline: 0;
+  border: none;
 }
 
 .schedulebox .scheduleinner i {
-    position: absolute;
-    bottom: 34px;
-    margin-left: 7px;
-    color: rgb(110, 110, 110);
+  position: absolute;
+  bottom: 34px;
+  margin-left: 7px;
+  color: rgb(110, 110, 110);
 }
-.schdulebutton
-{
-    text-align: center;
+.schdulebutton {
+  text-align: center;
 }
-.schdulebutton input
-{
-    color: white;
-    background-color: #474FA0;
-    font-weight: bold;
-    border-radius: 7px;
-    width: 100%;
-    height: 160%;
+.schdulebutton input {
+  color: white;
+  background-color: #6B32FE;
+  font-weight: bold;
+  border-radius: 7px;
+  width: 100%;
+  height: 160%;
+  font-size: 20px;
+  letter-spacing: 3px;
 }
-.schdulebutton input:hover
-{
-    color:#474FA0;
-    background-color: white;
-    box-shadow: 2px 2px 20px rgb(194, 194, 194);
+.schdulebutton input:hover {
+  background-color: #325FFE;
+  color: white;
 }
-.listcol
-{
-    width: 200px;
-    float: left;
+.listcol {
+  width: 200px;
+  float: left;
 }
-@media screen and (max-width:575px) {
-    .indexright img {
-        display: none;
-    }
-    .schedulebox {
-        background-color: #FE5F3B;
-    }
+@media screen and (max-width: 575px) {
+  .indexright img {
+    display: none;
+  }
+  .schedulebox {
+    background-color: #FE6B32;
+  }
 }
+
+/* schdule end ...................................... */
 
 /* Index end  -----------------------------------------------------*/
 
 /* description start */
 
-.description h5
-{
-    color: #a8a8a8;
+.description h5 {
+  color: rgb(110, 110, 110);
+  position: relative;
 }
-.description h3
+.description h5::after
 {
-    font-weight: bold;
+    content: "";
+    position: absolute;
+    border-bottom: 5px solid #FE6B32;
+    width: 6vw;
+    bottom: -20%;
+    left: 50%;
 }
-.card
-{
-    border: none;
+.description h3 {
+  font-weight: bold;
+  color: #2f2f2f;
+  font-size: 30px;
 }
-.box1,.box2,.box3,.box4
-{
-    height: 100px;
-    width: 100px;
-    background-color: #F8F7F7;
-    border-radius: 15px;
-    border: 5px solid white;
-    box-shadow: 1px 1px 30px rgb(206, 204, 204);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card {
+  border: none;
 }
-.box1,.box3 i
-{
-    color:#FE5C3D;
+.box1,
+.box2,
+.box3,
+.box4 {
+  height: 100px;
+  width: 100px;
+  background-color: #f8f7f7;
+  border-radius: 15px;
+  border: 5px solid white;
+  box-shadow: 1px 1px 30px rgb(206, 204, 204);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.box2,.box4
-{
-    background:linear-gradient(to bottom, #FE5C3D,#FE8624);
-    border: none;
+.box1,
+.box3 i {
+  color: #FE6B32;
 }
-.box2,.box4 i
-{
-    color: #fff;
+.box2,
+.box4 {
+  background: linear-gradient(to bottom, #FE6B32, #ff780a);
+  border: none;
 }
-.card .card-title
-{
-    font-size: 20px;
-    font-weight: bold;
+.box2,
+.box4 i {
+  color: #fff;
+}
+.card .card-title {
+  font-size: 20px;
+  font-weight: bold;
+  color:#2f2f2f;
 }
 
-.card .card-text
-{
-    font-size: 13px;
-    font-weight: bold;
-    color: rgb(151, 148, 148);
+.card .card-text {
+  font-size: 16px;
+  color: rgb(110, 110, 110);
 }
 
 /* description end */
 
-.animationbox
-{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    position: absolute;
-    top: 0;
+/* cutomer reviews start............................... */
+
+.slider {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(10, 6, 3, 0.698), rgba(0, 0, 0, 0.65)),
+    url("../image/bus_1.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  background-attachment: fixed;
 }
-.anibox
-{
-    width: 20px;
-    height: 20px;
-    animation: animbox 15s linear infinite;
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.customer-reviews {
+  color: white;
+  font-weight: bolder;
+  font-size:30px;
+  position: relative;
+}
+.customer-reviews::after {
+  content: "";
+  position: absolute;
+  width: 5.9vw;
+  border-top: 5px solid #FE6B32;
+  bottom: -25%;
+  left: 51%;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+  filter: blur(4px);
+}
+.swiper-slide-active {
+  filter: blur(0px);
+}
+.testimonialbox {
+  background-color: rgb(253, 253, 253);
+  position: relative;
+  width: 100%;
+  padding: 40px;
+  padding-top: 50px;
+  border-radius: 20px;
+}
+.testimonialbox .quote {
+  position: absolute;
+  top: 30px;
+  right: 20px;
+  opacity: 0.6;
+}
+.testimonialbox .content {
+  font-size: 16px;
+  margin-bottom: 10px;
+  position: relative;
+  color: rgb(110, 110, 110);
+}
+.testimonialbox .details {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.testimonialbox .details .img-box {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.testimonialbox .details .img-box img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.swiper-3d .swiper-slide-shadow-left,
+.swiper-3d .swiper-slide-shadow-right {
+  background-image: none;
+}
+.testimonialbox .details h3 {
+  font-size: 14px;
+  margin-left: 20px;
+  letter-spacing: 2px;
+  color: #FE6B32;
+  font-weight: bold;
+}
+.testimonialbox .details h3 span {
+  font-size: 12px;
+  color: #2f2f2f;
 }
 
-.anibox:nth-child(1)
-{
-    animation-delay: 1s;
-    background-color: #474FA0;
+/* customer reviews end .................................... */
+
+/* counter start ..............*/
+
+.counter-up .content .box {
+  text-align: center;
+  padding: 40px;
+  color: #2f2f2f;
 }
-.anibox:nth-child(2)
-{
-    animation-delay: 3s;
-    background-color: #FE8624;
+.counter-up .content .box i {
+  color: #FE6B32;
 }
-.anibox:nth-child(3)
-{
-    animation-delay: 2s;
-    background-color: #01a906;
+.counter-up .content .box .count {
+  font-weight: bolder;
+  font-size: 30px;
 }
-.anibox:nth-child(4)
-{
-    animation-delay: 4s;
-    background-color: #FE5C3D;
+.counter-up .content .box .text {
+  font-weight: bold;
+  font-size: 20px;
 }
-.anibox:nth-child(5)
-{
-    animation-delay: 5s;
-    background-color: #474FA0;
+
+/* counter end............. */
+
+/* footer start ............................................ */
+footer {
+  background-color: #2f2f2f;
 }
-@keyframes animbox
-{
-    0%
-    {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-    40%
-    {
-        transform: translateX(20vh);
-        opacity: 1;
-    }
-    70%
-    {
-        transform: rotate(40deg);
-        opacity: 1;
-    }
-    100%
-    {
-        transform: translateY(80vh);
-        opacity: 0;
-    }
+footer .row {
+  display: flex;
+  justify-content: space-between;
 }
+footer .row .col-lg-4 {
+  text-align: center;
+}
+.footer h3 {
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  position: relative;
+}
+.footer h3::after {
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  left: 60%;
+  width: 4vw;
+  border-bottom: 5px solid #FE6B32;
+}
+.footer .about h3::after {
+  width:20%;
+  height: 3px;
+  position: absolute;
+  bottom: -10%;
+  left: 25%;
+}
+.footer p {
+  color: rgb(110, 110, 110);
+  text-align: left;
+}
+.footer .list-group-item {
+  background-color: transparent;
+  color: rgb(110, 110, 110);
+  border: 0;
+  padding-left: 80px;
+  text-align: left;
+}
+.footer .list-group-item:hover {
+  color: rgb(255, 255, 255);
+}
+.footer i {
+  color: rgb(110, 110, 110);
+}
+.footer i:hover {
+  color: white;
+}
+.lastpart {
+  background-color: #505050;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lastpart h4 {
+  font-size: 20px;
+  color: #e7e7e7;
+}
+/* footer end........................................ */
+/* selection................. */
+::selection {
+  background-color: #FE6B32;
+  color: white;
+}
+/* animation start .................................................... */
+.animationbox {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+}
+.anibox {
+  width: 20px;
+  height: 20px;
+  animation: animbox 15s linear infinite;
+}
+
+.anibox:nth-child(1) {
+  animation-delay: 1s;
+  background-color: #325FFE;
+}
+.anibox:nth-child(2) {
+  animation-delay: 3s;
+  background-color: #FE6B32;
+}
+.anibox:nth-child(3) {
+  animation-delay: 2s;
+  background-color: #5FFE32;
+}
+.anibox:nth-child(4) {
+  animation-delay: 4s;
+  background-color: #ff780a;
+}
+.anibox:nth-child(5) {
+  animation-delay: 5s;
+  background-color: #325FFE;
+}
+@keyframes animbox {
+  0% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+  40% {
+    transform: translateX(20vh);
+    opacity: 1;
+  }
+  70% {
+    transform: rotate(40deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(80vh);
+    opacity: 0;
+  }
+}
+/* animation end................................................ */

@@ -1,99 +1,89 @@
 * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    box-sizing: border-box;
-    /* font-family: 'Lato', sans-serif; */
-    /* font-family: 'Open Sans', sans-serif; */
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
 }
 /* team start */
-.team
-{
-    margin-top: 100px ;
+.team {
+  margin-top: 100px;
 }
-.team .h3
-{
-    text-transform: uppercase;
-    text-align: center;
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+.team .h3 {
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color:#2f2f2f;
+  font-size: 30px;
 }
-.team .p
-{
-    text-align: center;
-    display: block;
-    margin-bottom: 70px;
-    font-weight: bold;
-    color: #858585;
+.team .p {
+  text-align: center;
+  display: block;
+  margin-bottom: 70px;
+  color: rgb(110, 110, 110);
+  font-size: 20px;
 }
 
-.team .teamcard
-{
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 20px;
-    perspective: 1000px;
-    -webkit-perspective: 1000px ;
+.team .teamcard {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
 }
-.team .teamimgbox
-{
-    width: 100%;
-    height: 250px;
-    transition: all .5s ease;
-    border-radius: 5px;
+.team .teamimgbox {
+  width: 100%;
+  height: 250px;
+  transition: all 0.5s ease;
+  border-radius: 5px;
 }
-.team .one
-{
-    background-image: url(../image/tanmoy.png);
-    background-size: cover;
-    background-position: center center;
+.team .one {
+  background-image: url(../image/tanmoy.png);
+  background-size: cover;
+  background-position: center center;
 }
-.team .two
-{
-    background-image: url(https://englishtribuneimages.blob.core.windows.net/gallary-content/2020/6/2020_6$largeimg_2106819729.jpg);
-    background-size: cover;
-    background-position: center center;
+.team .two {
+  background-image: url(https://englishtribuneimages.blob.core.windows.net/gallary-content/2020/6/2020_6$largeimg_2106819729.jpg);
+  background-size: cover;
+  background-position: center center;
 }
-.team .three
-{
-    background-image: url(https://media.istockphoto.com/photos/fit-man-standing-outdoors-in-a-city-picture-id1299360127?b=1&k=20&m=1299360127&s=170667a&w=0&h=1Rvw_UPTnj1LkB543cuCjiLM0xbIdjjin0rw6yaL8bc=);
-    background-size: cover;
-    background-position: center center;
+.team .three {
+  background-image: url(https://media.istockphoto.com/photos/fit-man-standing-outdoors-in-a-city-picture-id1299360127?b=1&k=20&m=1299360127&s=170667a&w=0&h=1Rvw_UPTnj1LkB543cuCjiLM0xbIdjjin0rw6yaL8bc=);
+  background-size: cover;
+  background-position: center center;
 }
-.team .teamcontent
-{
-    position: absolute;
-    width: 100%;
-    height: 250px;
-    text-align: center;
-    transition: all .5s ease;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    opacity: 0;
-    backface-visibility: hidden;
-    transform-style: preserve-3d;
-    transform: rotateY(-90deg);
-    color: white;
-    background:linear-gradient(to bottom, #FE5C3D,#FE8624);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.team .teamcontent {
+  position: absolute;
+  width: 100%;
+  height: 250px;
+  text-align: center;
+  transition: all 0.5s ease;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transform: rotateY(-90deg);
+  color: white;
+  background: linear-gradient(to bottom, #FE6B32, #ff780a);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.team .teamcontent a i
-{
-    color: white;
+.team .teamcontent a i {
+  color: white;
 }
-.team .teamcard:hover > .teamimgbox
-{
-    opacity: 0;
-    transform: translateX(-110px) rotateY(90deg);
+.team .teamcard:hover > .teamimgbox {
+  opacity: 0;
+  transform: translateX(-110px) rotateY(90deg);
 }
-.team .teamcard:hover > .teamcontent
-{
-    opacity: 1;
-    transform: rotateY(0);
+.team .teamcard:hover > .teamcontent {
+  opacity: 1;
+  transform: rotateY(0);
 }
 /* team end */
