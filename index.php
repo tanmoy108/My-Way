@@ -249,7 +249,7 @@ if(isset($_GET['userlogout']))
                 <div class="img-box">
                   <img src="image/tawfique.jpg" alt="">
                 </div>
-                <h3>Tawfique<br> <span>UX UI Designer</span> </h3>
+                <h3>Tawfique<br> <span>Web Designer</span> </h3>
               </div>
             </div>
           </div>
