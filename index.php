@@ -247,9 +247,9 @@ if(isset($_GET['userlogout']))
               perferendis, repellendus quas at fugiat eligendi, alias modi commodi neque error aliquid
               <div class="details">
                 <div class="img-box">
-                  <img src="image/tanmoy.png" alt="">
+                  <img src="image/tawfique.jpg" alt="">
                 </div>
-                <h3>Tanmoy Sharma<br> <span>UX UI Designer</span> </h3>
+                <h3>Tawfique<br> <span>UX UI Designer</span> </h3>
               </div>
             </div>
           </div>
@@ -262,9 +262,9 @@ if(isset($_GET['userlogout']))
               perferendis, repellendus quas at fugiat eligendi, alias modi commodi neque error aliquid
               <div class="details">
                 <div class="img-box">
-                  <img src="image/tanmoy2.jpg" alt="">
+                  <img src="image/siam.jpeg" alt="">
                 </div>
-                <h3>Tanmoy<br> <span>Web Developer</span> </h3>
+                <h3>Siam<br> <span>Web Developer</span> </h3>
               </div>
             </div>
           </div>

@@ -106,7 +106,7 @@ if(isset($_GET['userlogout']))
             <div class="teamimage"></div>
           </div>
           <div class="teamcontent">
-            <h3>John Doe</h3>
+            <h3>Tawfique Mohammad</h3>
             <b>Web Developer</b>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, dolore.</p>
             <div class="div">
@@ -124,7 +124,7 @@ if(isset($_GET['userlogout']))
             <div class="teamimage"></div>
           </div>
           <div class="teamcontent">
-            <h3>Mack Henry</h3>
+            <h3>Mehedi Hasan Siam</h3>
             <b>Seo Specialist</b>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, dolore.</p>
             <div class="div">
