@@ -83,7 +83,7 @@ if (window.history.replaceState) {
       if(isset($uid) == null)
         { ?>
       <div class="signinsignup text-center" id="hello">
-        <a class="btn signninbtn px-3 py-2 my-2" href="signinsignup.php">JOIN US !</a>
+        <a class="btn signninbtn px-3 py-2 my-2" href="signin.php">JOIN US !</a>
       </div>
       <?php         
         }

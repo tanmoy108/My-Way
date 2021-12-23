@@ -1,4 +1,12 @@
 <?php 
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\SMTP;
+    use PHPMailer\PHPMailer\Exception;
+
+    //Load Composer's autoloader
+    require 'vendor/autoload.php';
+    define ('GUSER','tanmoysharma46@gmail.com');
+    define ('GPWD','%%%Tanmoysharma108%%%');
 
 Class busapp
 {
@@ -244,32 +252,77 @@ Class busapp
             return $result;
         }
     }
+    public function sendemail_verify($username,$email,$verify_token)
+    {
+
+        // global $error;
+        global $error;
+        $mail = new PHPMailer();  // create a new object
+        $mail->SMTPOptions = array(
+            'ssl' => array(
+                'verify_peer' => false,
+                'verify_peer_name' => false,
+                'allow_self_signed' => true
+            )
+        );
+        $mail->IsSMTP(); // enable SMTP
+        $mail->SMTPDebug = 2;  // debugging: 1 = errors and messages, 2 = messages only
+        $mail->SMTPAuth = true;  // authentication enabled
+        $mail->SMTPSecure = 'tls'; // secure transfer enabled REQUIRED for GMail
+        $mail->SMTPAutoTLS = false;
+        $mail->Host = 'smtp.gmail.com';
+        $mail->Port = 587;
     
+        $mail->Username = GUSER;  
+        $mail->Password = GPWD;           
+        $mail->SetFrom($username);
+        $mail->Subject = "here is the subject";
+        $email_template ="
+        <h2>You have Registered with MyWay</h2>
+        <h5>Verify your email addrees to Login with the below given link</h5><br/></br>
+        <a href='http://localhost/bus_management/signin.php/verify_email.php?token=$verify_token'>click here</a>
+        ";
+        $mail->Body = $email_template;
+        $mail->AddAddress($email);
+        if(!$mail->Send()) {
+            $error = 'Mail error: '.$mail->ErrorInfo; 
+            return false;
+        } else {
+            $error = 'Message sent!';
+            return true;
+        }
+
+
+
+    }
 
     public function adduser($data)
     {
         $username = $data['username'];
         $email = $data['email'];
         $password = md5($data['password']);
+        $verify_token = md5(rand());
         $select = mysqli_query($this->conn, "SELECT `email` FROM `users` WHERE `email`='$email'") or exit(mysqli_error($this->conn));
         if(mysqli_num_rows($select)) 
             {
                 ?>
-<script>
-    alert('This email is already being used');
-</script>
-<?php }
+            <script>
+                alert('This email is already being used');
+            </script>
+            <?php }
         else
             {
-                $query = "INSERT INTO `users`(`username`, `email`, `password`) VALUES ('$username','$email','$password')";
+                $query = "INSERT INTO `users`(`username`, `email`, `password`,`token`) VALUES ('$username','$email','$password','$verify_token')";
                 
                 if(mysqli_query($this->conn,$query))
                     {
-                        return "Accout Created";
+                        $status = "Accout Created.Please verify your email";
+                        return $status;
+                        $this->sendemail_verify("$username","$email","$verify_token");
                     }
                 else
                     {
-                        return "Can't Created";
+                        return "Failed";
                     }
             }
     }
@@ -307,7 +360,7 @@ Class busapp
     {
         unset($_SESSION['id']);
         unset($_SESSION['uname']);
-        header("location:signinsignup.php");
+        header("location:signin.php");
     }
 
 
@@ -355,8 +408,7 @@ Class busapp
         {
             $seat = mysqli_query($this->conn,$query);
             return $seat;
-        
-    }
+        }
 
     }
 

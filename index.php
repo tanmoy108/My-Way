@@ -56,7 +56,7 @@ if(isset($_GET['userlogout']))
       if(isset($uid) == null)
         { ?>
       <div class="signinsignup text-center" id="hello">
-        <a class="btn signninbtn px-3 py-2 my-2" href="signinsignup.php">JOIN US !</a>
+        <a class="btn signninbtn px-3 py-2 my-2" href="signin.php">JOIN US !</a>
       </div>
       <?php         
         }
@@ -234,7 +234,7 @@ if(isset($_GET['userlogout']))
                 <div class="img-box">
                   <img src="image/tanmoy1.jpg" alt="">
                 </div>
-                <h3>Sh Tanmoy<br> <span>Web Designer</span> </h3>
+                <h3>Sh Tanmoy<br> <span>Web Developer</span> </h3>
               </div>
             </div>
           </div>
@@ -264,7 +264,7 @@ if(isset($_GET['userlogout']))
                 <div class="img-box">
                   <img src="image/siam.jpeg" alt="">
                 </div>
-                <h3>Siam<br> <span>Web Developer</span> </h3>
+                <h3>Siam<br> <span>UX UI Designer</span> </h3>
               </div>
             </div>
           </div>
@@ -395,7 +395,7 @@ if(isset($_GET['userlogout']))
   </script>
 
   <!-- external js -->
-  <script src="js/autocompleteajax.js"></script>
+  <script src="js/autocompleteajax.js"></script> 
 
 
 </body>

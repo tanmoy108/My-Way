@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Lato', ksans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+  scroll-behavior: smooth;
+}
+/* page loader css start -----------------------------------------*/
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgb(255, 255, 255) url(https://i.pinimg.com/originals/65/ba/48/65ba488626025cff82f091336fbf94bb.gif) no-repeat center;
+  z-index: 99999;
+}
+/* page loader css end -------------------------------------------*/
+
+img
+{
+  position: absolute;
+}
+.image2 {
+  height: 100vh;
+  max-height: 100%;
+  width: 100vw;
+  max-width: 100%;
+  background-image:url(../image/bus_3.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.rounded_box
+{
+  width: 70%;
+}
+.text-uppercase
+{
+  font-weight: bolder;
+  margin-right: 6.875rem;
+}
+.rounded_box .signinright {
+  width: 60vw;
+  padding: 20px;
+  display: flex;
+  justify-content: right;
+}
+.signinright .input-container{
+  display: flex;
+  align-items: center;
+  width: 300px;
+  height: 50px;
+}
+
+.rounded_box .signinright form input{
+  background-color: #323544;
+  color: white;
+  width: 100%;
+  height: 100%;
+  letter-spacing: 1px;
+  border-radius: 16px;
+  padding-left: 35px;
+}
+
+.signinright .input-container i{
+  position: absolute;
+  padding-left: 10px;
+  color: rgb(216, 216, 216);
+}
+
+.signinbtn{
+  width: 100%;
+  background: linear-gradient(to right,#FE6B32,#fa4f0b);
+  color: white;
+  border: none;
+  outline: none;
+  border-radius: 49px;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.signinbtn:hover{
+  background: linear-gradient(to right,#FC4701,#FE6B32);
+  color: white;
+}
+.errormsg
+{
+  color:rgb(255, 119, 101);
+  text-align: center;
+}
+@media screen and (max-width:700px) {
+  .rounded_box
+{
+  width: 50%;
+}
+  .text-uppercase
+  {
+    text-align: center;
+    margin-left:35px ;
+   
+  }
+  .rounded_box .signinright {
+    display: flex;
+    justify-content: center;
+  }
+  
+}
