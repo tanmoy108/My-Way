@@ -32,7 +32,7 @@
     <style>
         * {
             box-sizing: border-box;
-            font-family: 'Open Sans', sans-serif;
+            font-family: "Lato", sans-serif;
         }
 
         #mainbox {
@@ -72,11 +72,12 @@
             text-align: center;
             color: rgb(209, 207, 207);
             letter-spacing: 3px;
+            font-size:20px;
         }
 
         .sidemenu a {
             text-decoration: none;
-            font-size: 1em;
+            font-size: 16px;
             color: rgb(143, 141, 141);
             display: block;
         }
@@ -105,7 +106,7 @@
 
         .sidemenu .closebutton:hover {
             text-decoration: none;
-            color: #FE5F3B;
+            color: #FE6B32;
         }
     </style>
 </head>
@@ -121,6 +122,14 @@
         {
             include("dashboard.php");
         }
+        else if($view == "ticket")
+        {
+            include("ticket.php");
+        }
+        else if($view == "customer")
+        {
+            include("customer.php");
+        }
     }  
     ?>
     </div>
@@ -128,8 +137,8 @@
         <div class="circle"></div>
         <h3><?php echo($name); ?></h3>
         <a href="dashcondition.php" class="link">Bus</a>
-        <a href="#" class="link">Ticket</a>
-        <a href="#" class="link">Customer</a>
+        <a href="ticketcondition.php" class="link">Ticket</a>
+        <a href="customercondition.php" class="link">Customer</a>
         <a href="?adminlogout=logout" class="link">Logout</a>
         <a href="#" class="closebutton" onclick="closefunction()">&times;</a>
     </div>
@@ -141,12 +150,16 @@
             document.getElementById("menu").style.width = "300px";
             document.getElementById("mainbox").style.marginLeft = "300px";
             document.getElementById("dashboard").style.marginLeft = "300px";
+            document.getElementById("customer").style.marginLeft = "300px";
+            document.getElementById("ticket").style.marginLeft = "300px";
         }
 
         function closefunction() {
             document.getElementById("menu").style.width = "0px";
             document.getElementById("mainbox").style.marginLeft = "0px";
             document.getElementById("dashboard").style.marginLeft = "0px";
+            document.getElementById("customer").style.marginLeft = "0px";
+            document.getElementById("ticket").style.marginLeft = "0px";
         }
     </script>
 </body>

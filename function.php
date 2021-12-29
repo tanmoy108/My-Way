@@ -311,6 +311,35 @@ Class busapp
     }
 
 
+    public function show_user()
+    {
+        $query = "SELECT * FROM users";
+        $output = ''; 
+        if(mysqli_query($this->conn,$query))
+        {
+            $result = mysqli_query($this->conn,$query);
+            $output .= '
+            <table>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+            ';
+            while($row=mysqli_fetch_object($result))
+            {
+                $output .= '
+                
+                <tr>
+                <td>'.$row->username.'</td>
+                <td>'.$row->email.'</td>
+                <td>'.$row->password.'</td>
+            </tr> ';
+            }
+            $output .= ' </table>';
+            return $output;
+        }
+    }
     public function add_price($data)
     {
         $id = $data['id'];
@@ -355,11 +384,8 @@ Class busapp
         {
             $seat = mysqli_query($this->conn,$query);
             return $seat;
-        
     }
-
     }
-
 
     public function add_seat($data)
     {
@@ -397,6 +423,39 @@ Class busapp
         {
             $returndata = mysqli_query($this->conn,$query);
             return $returndata;
+        }
+    }
+    public function show_seat()
+    {
+        $query = "SELECT * FROM seat";
+        $output = ''; 
+        if(mysqli_query($this->conn,$query))
+        {
+            $result = mysqli_query($this->conn,$query);
+            $output .= '
+            <table>
+            <tr>
+                <th>Bus Name</th>
+                <th>User Name</th>
+                <th>Boarding Point</th>
+                <th>Seat no</th>
+                <th>Amount</th>
+            </tr>
+            ';
+            while($row=mysqli_fetch_object($result))
+            {
+                $output .= '
+                
+                <tr>
+                <td>'.$row->bus_name.'</td>
+                <td>'.$row->user_name.'</td>
+                <td>'.$row->boardingpnt.'</td>
+                <td>'.$row->seatno.'</td>
+                <td>'.$row->amount.'</td>
+            </tr> ';
+            }
+            $output .= ' </table>';
+            return $output;
         }
     }
 }

@@ -6,7 +6,15 @@
       if($_POST["action"] == "Load")  
       {  
            echo $object->display_bus(); 
-      }  
+      }
+      if($_POST["action"] == "Load2")  
+      {  
+           echo $object->show_user(); 
+      }
+      if($_POST["action"] == "Load3")  
+      {  
+           echo $object->show_seat(); 
+      }    
       if($_POST["action"] == "Insert")  
       {  
           $object->add_bus($_POST);

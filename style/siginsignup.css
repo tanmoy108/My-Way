@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Lato", sans-serif;
 }
 
 body,
 input {
-    font-family: 'Poppins', sans-serif;
+    font-family: "Lato", sans-serif;
 }
 
 .container {
@@ -25,7 +25,7 @@ input {
     width: 2000px;
     height: 2000px;
     border-radius: 50%;
-    background: linear-gradient(-45deg, #FE5C3D,#FE8624);
+    background: linear-gradient(-45deg, #FC4701,#FE6B32);
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
@@ -76,7 +76,7 @@ form.sign-up-form {
 
 .title {
     font-size: 2.2rem;
-    color: #444;
+    color: #2f2f2f;
     margin-bottom: 10px;
 }
 
@@ -95,12 +95,12 @@ form.sign-up-form {
 .input-field i {
     text-align: center;
     line-height: 55px;
-    color: rgb(149, 149, 149);
+    color: #2f2f2f;
     font-size: 1.1rem;
 }
 
 .input-field input {
-    color: rgb(110, 110, 110);
+    color: #2f2f2f;
     background: transparent;
     outline: none;
     border: none;
@@ -110,7 +110,7 @@ form.sign-up-form {
 }
 
 .input-field input::placeholder {
-    color: rgb(136, 136, 136);
+    color: rgb(110, 110, 110);
     font-weight: 500;
 }
 
@@ -121,7 +121,7 @@ form.sign-up-form {
     outline: none;
     border-radius: 49px;
     cursor: pointer;
-    background-color: #FE8624;
+    background-color: #FE6B32;
     color: white;
     text-transform: uppercase;
     font-weight: 600;
@@ -131,7 +131,7 @@ form.sign-up-form {
 }
 
 .btn:hover {
-    background-color: #FE8624;
+    background-color: #ff780a;
 }
 
 .errormsg
@@ -153,7 +153,7 @@ form.sign-up-form {
 .social-icon {
     height: 46px;
     width: 46px;
-    border: 1px solid #444;
+    border: 1px solid #2f2f2f;
     margin: 0 0.45rem;
     display: flex;
     justify-content: center;
@@ -166,8 +166,8 @@ form.sign-up-form {
 }
 
 .social-icon:hover {
-    color: rgb(221, 110, 20);
-    border-color: rgb(221, 110, 20);
+    color: #FE6B32;
+    border-color: #FE6B32;
 }
 
 .panels-container {
@@ -275,7 +275,17 @@ form.sign-up-form {
     z-index: 2;
     opacity: 100%;
 }
-
+.lastpart {
+    background-color: #505050;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .lastpart h4 {
+    font-size: 16px;
+    color: #e7e7e7;
+  }
 @media (max-width:870px) {
     .container {
         min-height: 800px;

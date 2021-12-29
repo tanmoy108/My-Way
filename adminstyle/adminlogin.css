@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Lato", sans-serif;
 }
 .admin {
     width: 100vw;
@@ -12,6 +13,11 @@
 .admin .header
 {
     text-align: center;
+    font-size: 30px;
+}
+.admin .header small
+{
+    font-size: 16px;
 }
 
 .admin .row {
@@ -26,7 +32,7 @@
 }
 .col-lg-4
 {
-    background:linear-gradient(#ff040465,#fe5f3ba6), url(../image/bus_2.jpg) ;
+    background:linear-gradient(#fe6c328e,#fc4801ab), url(../image/bus_2.jpg) ;
     background-size: cover;
     background-position: center center;
     filter:brightness(130%);
@@ -61,15 +67,16 @@ input[type="email"], input[type="password"]
 }
 .submitbtn .btn
 {
-    background-color: #474FA0;
+    background-color: #6B32FE;
     color:white;
     font-weight: bold;
     letter-spacing: 2px;
+    font-size: 20px;
 }
 .submitbtn .btn:hover
 {
-    background-color:white ;
-    color:#474FA0;
+    background-color:#325FFE;
+    color:white;
 }
 button
 {

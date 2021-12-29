@@ -4,6 +4,7 @@
     padding: 0;
     outline: 0;
     box-sizing: border-box;
+    font-family: "Lato", sans-serif;
 }
 .body
 {
@@ -21,6 +22,7 @@
     position: absolute;
     top: 30px;
     left: 30px;
+    color: #6B32FE ;
 }
 
 .mainbox
@@ -36,7 +38,7 @@ img
 {
     border-radius: 10px;
     width: 100%;
-    border: 5px solid rgba(187, 187, 187, 0.575);
+    border: 5px solid rgba(110, 110, 110, 0.603);
 }
 .info
 {
@@ -66,13 +68,15 @@ input
 input[type="submit"]
 {
     color: white;
-    background-color: #474FA0;
+    background-color: #6B32FE;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 3px;
 }
 input[type="submit"]:hover
 {
-    text-transform: uppercase;
     color: white;
-    background-color: #282e7a;
+    background-color: #325FFE;
 }
 .boarding .row
 {

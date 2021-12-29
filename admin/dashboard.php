@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-75">
                         <input type="text" id="dtimeroute" name="dtimeroute" placeholder="Depature Time"
-                            onfocus="(this.type='time')" pattern="[0-9]{2}:[0-9]{2}" required>
+                            onfocus="(this.type='time')" pattern="[0-9]{2}:[0-9]{2}" onchange="onTimeChange()" required>
                     </div>
                 </div>
                 <div class="row">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="col-75">
                         <input type="text" id="atimeroute" name="atimeroute" placeholder="Arrival Time"
-                            onfocus="(this.type='time')" pattern="[0-9]{2}:[0-9]{2}" required>
+                            onfocus="(this.type='time')" pattern="[0-9]{2}:[0-9]{2}" onchange="onTimeChange()" required>
                     </div>
                 </div>
                 <div class="row">
@@ -87,4 +87,54 @@
     include_once("../includes/script.php"); ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src ="../js/date.js" ></script>
+<script>
+    var inputEle = document.getElementById('dtimeroute');
+
+
+function onTimeChange() {
+  var timeSplit = inputEle.value.split(':'),
+    hours,
+    minutes,
+    meridian;
+  hours = timeSplit[0];
+  minutes = timeSplit[1];
+  if (hours > 12) {
+    meridian = 'PM';
+    hours -= 12;
+  } else if (hours < 12) {
+    meridian = 'AM';
+    if (hours == 0) {
+      hours = 12;
+    }
+  } else {
+    meridian = 'PM';
+  }
+  var time1 = hours + ':' + minutes + ' ' + meridian;
+}
+</script>
+<script>
+    var inputEle2 = document.getElementById('atimeroute');
+
+
+function onTimeChange() {
+  var timeSplit = inputEle2.value.split(':'),
+    hours,
+    minutes,
+    meridian;
+  hours = timeSplit[0];
+  minutes = timeSplit[1];
+  if (hours > 12) {
+    meridian = 'PM';
+    hours -= 12;
+  } else if (hours < 12) {
+    meridian = 'AM';
+    if (hours == 0) {
+      hours = 12;
+    }
+  } else {
+    meridian = 'PM';
+  }
+  var time2= hours + ':' + minutes + ' ' + meridian;
+}
+</script>
 <script type="text/javascript" src="../adminjs/dashboard.js" ></script>

@@ -32,7 +32,7 @@ if(isset($_POST['adminbutton']))
     <div class="admin">
         <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-12">
-            <a class="navbar-brand pl-3 " href="index.php"><i class="fab fa-amazon fa-3x text-light "></i></a>
+            <a class="navbar-brand pl-3 " href="index.php"><img style="width:150px" ; src="image/logo.png" alt=""></a>
             </div>
             <div class="col-lg-8 col-md-8 col-sm-12">
                <div class="loginright">

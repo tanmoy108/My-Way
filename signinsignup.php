@@ -148,7 +148,13 @@ if(isset($uid))
 
         </div>
     </div>
-    <!-- <script src="js/firebaseauth.js"></script> -->
+  <div class="container-fluid">
+    <div class="row lastpart">
+      <h4>© 2021 MyWay. All rights reserved. Design and Developed by <a style="color:#e7e7e7" ;
+          href="https://github.com/tanmoy108" target="_blank">shtanmoy</a></h4>
+    </div>
+  </div>
+
     <script>
         var preloader = document.getElementById("loading");
 

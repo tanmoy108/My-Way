@@ -1,4 +1,4 @@
 <?php 
-    $view = "dashboard";
+    $view = "ticket";
     include("sidemenu.php");
 ?>

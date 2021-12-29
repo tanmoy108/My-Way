@@ -1,5 +1,7 @@
 $(document).ready(function () {
     load_data();
+    load_data2();
+    load_data3();
     $('#action').val("Insert");
     $('#add').click(function () {
         $('#user_form')[0].reset();
@@ -21,14 +23,40 @@ $(document).ready(function () {
             }
         });
     }
+    function load_data2() {
+        var action = "Load2";
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: {
+                action: action
+            },
+            success: function (data) {
+                $('#user_table2').html(data);
+            }
+        });
+    }
+    function load_data3() {
+        var action = "Load3";
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: {
+                action: action
+            },
+            success: function (data) {
+                $('#user_table3').html(data);
+            }
+        });
+    }
     $('#user_form').on('submit', function (event) {
         event.preventDefault();
         var busname = $('#busname').val();
         var fromroute = $('#fromroute').val();
         var toroute = $('#toroute').val();
         var dateroute = $('#dateroute').val();
-        var dtimeroute = $('#dtimeroute').val();
-        var atimeroute = $('#atimeroute').val();
+        var dtimeroute = $(time1).val();
+        var atimeroute = $(time2).val();
         var bustype = $('#bustype').val();
         var picture = $('#picture').val().split('.').pop().toLowerCase();
         if (picture != '') {
