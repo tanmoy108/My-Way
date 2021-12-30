@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+}
+.btn
+{
+  color: white;
+  background-color: #FE6B32;
+  margin-bottom: 10px;
+}
+.header
+{
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  background-color:  #2f2f2f;
+  padding: 30px;
+}
+td
+{
+  text-align: center;
+}
+footer
+{
+  color: #ffffff;
+  text-align: center;
+  background-color:  #2f2f2f;
+  padding: 10px;
+  font-size: 14px;
+}
+.tag
+{
+  text-transform: uppercase;
+}

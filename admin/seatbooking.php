@@ -29,13 +29,7 @@
 
 <head>
   <title>Title</title>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <?php include_once("../includes/link.php"); ?>
   <link rel="stylesheet" href="../adminstyle/seatbooking.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
@@ -83,7 +77,7 @@
                 </div>
               </div>
             </div>
-            <input type="submit" name="submit" id="submit" class="btn" value="Submit" />
+            <input type="submit" name="submit" id="submit" class="btn" value="SUBMIT" />
           </Form>
         </div>
       </div>
@@ -101,31 +95,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-  <script>
-    $(document).ready(function () {
-    var i = 1;
-    $('#add').click(function () {
-      i++;
-      $('#dynamic_field').append('<div class="row  mb-3" id="row' + i +
-        '"> <div class="col-9"><input type="text" name="name[]" placeholder="Boarding Point Name:" class="form-control address_list" /></div><div class="col-3"><button type="button" name="remove" id="' +
-        i + '" class="btn btn-danger btn_remove"><i class="fas fa-minus-circle"></i></button></div></div>');
-    });
-    $(document).on('click', '.btn_remove', function () {
-      var button_id = $(this).attr("id");
-      $('#row' + button_id + '').remove();
-    });
-    // $('#submit').click(function () {
-    //     $('#add_info')[0].reset();
-    //   });
-    });
-  </script>
-    <script>
-    //resubmission problem solution
-    if (window.history.replaceState) {
-        window.history.replaceState(null, null, window.location.href)
-    }
-</script>
-
+<script src="../adminjs/seatbooking.js"></script>
 </body>
 
 </html>

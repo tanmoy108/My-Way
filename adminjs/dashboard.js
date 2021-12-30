@@ -1,5 +1,7 @@
 $(document).ready(function () {
     load_data();
+    load_data2();
+    load_data3();
     $('#action').val("Insert");
     $('#add').click(function () {
         $('#user_form')[0].reset();
@@ -21,11 +23,38 @@ $(document).ready(function () {
             }
         });
     }
+    function load_data2() {
+        var action = "Load2";
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: {
+                action: action
+            },
+            success: function (data) {
+                $('#user_table2').html(data);
+            }
+        });
+    }
+    function load_data3() {
+        var action = "Load3";
+        $.ajax({
+            url: "action.php",
+            method: "POST",
+            data: {
+                action: action
+            },
+            success: function (data) {
+                $('#user_table3').html(data);
+            }
+        });
+    }
+
     $('#user_form').on('submit', function (event) {
         event.preventDefault();
         var busname = $('#busname').val();
-        var fromroute = $('#fromroute').val();
-        var toroute = $('#toroute').val();
+        var fromroute = $('#fromroutes').val();
+        var toroute = $('#toroutes').val();
         var dateroute = $('#dateroute').val();
         var dtimeroute = $('#dtimeroute').val();
         var atimeroute = $('#atimeroute').val();
@@ -38,8 +67,7 @@ $(document).ready(function () {
                 return false;
             }
         }
-        if (busname != '' && fromroute != '' && toroute != '' && dateroute != '' && dtimeroute !=
-            '' && atimeroute != '' && bustype != '' && picture != '') {
+        if (fromroute != toroute ) {
             $.ajax({
                 url: "action.php",
                 method: "POST",
@@ -55,10 +83,11 @@ $(document).ready(function () {
                     $('#uploaded_image').html('');
                 }
             });
-        } else {
-            alert("Both Fields are Required");
+        } else if (fromroute == toroute ) {
+            alert("From route and to Route can't be same");
         }
     });
+    
 
     $(document).on('click', '.update', function () {
         var valueid = $(this).attr("id");
@@ -77,8 +106,8 @@ $(document).ready(function () {
                 // console.log("update");
                 // $('.collapse').collapse("show");
                 $('#busname').val(data.busname);
-                $('#fromroute').val(data.fromroute);
-                $('#toroute').val(data.toroute);
+                $('#fromroutes').val(data.fromroute);
+                $('#toroutes').val(data.toroute);
                 $('#dateroute').val(data.dateroute);
                 $('#dtimeroute').val(data.dtimeroute);
                 $('#atimeroute').val(data.atimeroute);

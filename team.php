@@ -59,12 +59,11 @@ if(isset($_GET['userlogout']))
         }
         else{ ?>
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle my-2" type="button" id="dropdownMenuButton"
+        <button class="btn dropdown-toggle my-2" type="button" id="dropdownMenuButton"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <?php echo($uname); ?>
+          <img style="width:30px" src="image/usericon.png" alt="usericon"> <?php echo($uname); ?>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Profile</a>
           <a class="dropdown-item" href="?userlogout=logout">Logout</a>
         </div>
       </div>
@@ -106,7 +105,7 @@ if(isset($_GET['userlogout']))
             <div class="teamimage"></div>
           </div>
           <div class="teamcontent">
-            <h3>Tawfique Mohammad</h3>
+            <h3>John Doe</h3>
             <b>Web Developer</b>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, dolore.</p>
             <div class="div">
@@ -124,7 +123,7 @@ if(isset($_GET['userlogout']))
             <div class="teamimage"></div>
           </div>
           <div class="teamcontent">
-            <h3>Mehedi Hasan Siam</h3>
+            <h3>Mack Henry</h3>
             <b>Seo Specialist</b>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, dolore.</p>
             <div class="div">

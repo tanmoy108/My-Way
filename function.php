@@ -76,7 +76,7 @@ Class busapp
                 <th>Travel Date</th>
                 <th>Time</th>
                 <th>Type</th>
-                <th>picture</th>
+                <th>Picture</th>
                 <th></th>
             </tr>
             ';
@@ -195,9 +195,9 @@ Class busapp
         }
     }
 
-    public function delete_data($catch_img,$query)
+    public function delete_data($catch_img,$query,$query1,$query2,$query3)
     {
-        if(mysqli_query($this->conn,$query))
+        if((mysqli_query($this->conn,$query)) && (mysqli_query($this->conn,$query1)) && (mysqli_query($this->conn,$query2)) && (mysqli_query($this->conn,$query3)))
         {
                 $delete_info = mysqli_query($this->conn,$catch_img);
                 $fetch_delete_info = mysqli_fetch_assoc($delete_info);
@@ -301,6 +301,7 @@ Class busapp
         $username = $data['username'];
         $email = $data['email'];
         $password = md5($data['password']);
+<<<<<<< HEAD
         $verify_token = md5(rand());
         $select = mysqli_query($this->conn, "SELECT `email` FROM `users` WHERE `email`='$email'") or exit(mysqli_error($this->conn));
         if(mysqli_num_rows($select)) 
@@ -309,6 +310,15 @@ Class busapp
             <script>
                 alert('This email is already being used');
             </script>
+=======
+        $select = mysqli_query($this->conn, "SELECT `email`,`username` FROM `users` WHERE `email`='$email' OR `username`='$username'") or exit(mysqli_error($this->conn));
+        if(mysqli_num_rows($select)) 
+            {
+                ?>
+                <script>
+                    alert('This email or username is already being used');
+                </script>
+>>>>>>> main
             <?php }
         else
             {
@@ -364,6 +374,35 @@ Class busapp
     }
 
 
+    public function show_user()
+    {
+        $query = "SELECT * FROM users";
+        $output = ''; 
+        if(mysqli_query($this->conn,$query))
+        {
+            $result = mysqli_query($this->conn,$query);
+            $output .= '
+            <table>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+            ';
+            while($row=mysqli_fetch_object($result))
+            {
+                $output .= '
+                
+                <tr>
+                <td>'.$row->username.'</td>
+                <td>'.$row->email.'</td>
+                <td>'.$row->password.'</td>
+            </tr> ';
+            }
+            $output .= ' </table>';
+            return $output;
+        }
+    }
     public function add_price($data)
     {
         $id = $data['id'];
@@ -409,9 +448,21 @@ Class busapp
             $seat = mysqli_query($this->conn,$query);
             return $seat;
         }
+<<<<<<< HEAD
+=======
+    }
+    
+    public function getpdf($a,$b)
+    {
+        $query="SELECT * FROM seat WHERE bus_id=$a AND user_id =$b";
+        if(mysqli_query($this->conn,$query))
+        {
+            $info = mysqli_query($this->conn,$query);
+            return $info;
+        }
+>>>>>>> main
 
     }
-
 
     public function add_seat($data)
     {
@@ -424,11 +475,41 @@ Class busapp
         $amount = $data['seatamount'];
         $seatnoe = $data['seatnoe'];
 
-        $query = "INSERT INTO seat(bus_id,bus_name,user_id,user_name,boardingpnt,seatno,amount,seatnoextra) VALUES($busid,'$busname',$userid,'$username','$boarding','$seatno','$amount','$seatnoe')";
-
-        if(mysqli_query($this->conn , $query))//query send
+        $select = mysqli_query($this->conn, "SELECT `bus_id`,`user_id` FROM `seat` WHERE `bus_id`='$busid' AND `user_id`='$userid'") or exit(mysqli_error($this->conn));
+        if(mysqli_num_rows($select)) 
+            {
+            ?>
+                <script>
+                    alert('you can not booked seat now');
+                </script>
+            <?php }
+        else
         {
-            return "Information Added Successfully";
+
+            $query = "INSERT INTO seat(bus_id,bus_name,user_id,user_name,boardingpnt,seatno,amount,seatnoextra) VALUES($busid,'$busname',$userid,'$username','$boarding','$seatno','$amount','$seatnoe')";
+
+            if(mysqli_query($this->conn , $query))//query send
+            {
+                $query1="SELECT * FROM seat WHERE bus_id=$busid AND user_id =$userid";
+                if(mysqli_query($this->conn,$query1))
+                {
+                    $info = mysqli_query($this->conn,$query1);
+                    if($info)
+                    {
+                        $seatinfo = mysqli_fetch_assoc($info);
+                        if(isset($seatinfo))
+                        {
+                            header("location:getpdf.php");
+                            session_start();
+                            $_SESSION['busname'] = $seatinfo['bus_name'];
+                            $_SESSION['username'] = $seatinfo['user_name'];
+                            $_SESSION['boarding'] = $seatinfo['boardingpnt'];
+                            $_SESSION['seatnumber'] = $seatinfo['seatno'];
+                            $_SESSION['price'] = $seatinfo['amount'];
+                        }
+                    }
+                }
+            }
         }
     }
     public function displayseat($data)
@@ -449,6 +530,39 @@ Class busapp
         {
             $returndata = mysqli_query($this->conn,$query);
             return $returndata;
+        }
+    }
+    public function show_seat()
+    {
+        $query = "SELECT * FROM seat";
+        $output = ''; 
+        if(mysqli_query($this->conn,$query))
+        {
+            $result = mysqli_query($this->conn,$query);
+            $output .= '
+            <table>
+            <tr>
+                <th>Bus Name</th>
+                <th>User Name</th>
+                <th>Boarding Point</th>
+                <th>Seat no</th>
+                <th>Amount</th>
+            </tr>
+            ';
+            while($row=mysqli_fetch_object($result))
+            {
+                $output .= '
+                
+                <tr>
+                <td>'.$row->bus_name.'</td>
+                <td>'.$row->user_name.'</td>
+                <td>'.$row->boardingpnt.'</td>
+                <td>'.$row->seatno.'</td>
+                <td>'.$row->amount.'</td>
+            </tr> ';
+            }
+            $output .= ' </table>';
+            return $output;
         }
     }
 }

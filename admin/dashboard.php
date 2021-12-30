@@ -33,7 +33,7 @@
                     </div>
                     <div class="col-75">
                         <input type="text" id="dtimeroute" name="dtimeroute" placeholder="Depature Time"
-                            onfocus="(this.type='time')" pattern="[0-9]{2}:[0-9]{2}" required>
+                            onfocus="(this.type='time')" pattern="[0-9]{2}:[0-9]{2}" onchange="onTimeChange()" required>
                     </div>
                 </div>
                 <div class="row">
@@ -42,7 +42,7 @@
                     </div>
                     <div class="col-75">
                         <input type="text" id="atimeroute" name="atimeroute" placeholder="Arrival Time"
-                            onfocus="(this.type='time')" pattern="[0-9]{2}:[0-9]{2}" required>
+                            onfocus="(this.type='time')" pattern="[0-9]{2}:[0-9]{2}" onchange="onTimeChange()" required>
                     </div>
                 </div>
                 <div class="row">

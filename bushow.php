@@ -70,12 +70,11 @@ if(isset($_POST['submit']))
         }
         else{ ?>
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle my-2" type="button" id="dropdownMenuButton"
+        <button class="btn dropdown-toggle my-2" type="button" id="dropdownMenuButton"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <?php echo($uname); ?>
+          <img style="width:30px" src="image/usericon.png" alt="usericon"> <?php echo($uname); ?>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Profile</a>
           <a class="dropdown-item" href="?userlogout=logout">Logout</a>
         </div>
       </div>

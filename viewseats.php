@@ -22,6 +22,7 @@ if(isset($_GET['status']))
         if(isset($_POST['submit']))
         {
             $return = $object->add_seat($_POST);
+            
         }
     }
     else
@@ -89,12 +90,11 @@ if (window.history.replaceState) {
         }
         else{ ?>
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle my-2" type="button" id="dropdownMenuButton"
+        <button class="btn dropdown-toggle my-2" type="button" id="dropdownMenuButton"
           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <?php echo($uname); ?>
+          <img style="width:30px" src="image/usericon.png" alt="usericon"> <?php echo($uname); ?>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="#">Profile</a>
           <a class="dropdown-item" href="?userlogout=logout">Logout</a>
         </div>
       </div>
@@ -141,12 +141,12 @@ if (window.history.replaceState) {
         } ?>
       <div id="msg" name="msg"></div>
       <p>Bus Name: </p>
-      <input class="form-control disabled" type="text" value="<?php echo $row['bus_name'] ?>" readonly="readonly">
+      <input class="form-control disabled" type="text" value="<?php echo $row['bus_name'] ?>" readonly="readonly" required >
       <p>Customer User Name: </p>
       <?php
             if(isset($uid))
             {?>
-      <input class="form-control disabled" type="text" value="<?php echo $uname ?>" disabled>
+      <input class="form-control disabled" type="text" value="<?php echo $uname ?>" disabled required >
       <?php }
             else
             { ?>
@@ -154,11 +154,11 @@ if (window.history.replaceState) {
       <?php }
             ?>
       <p>Ticket no: </p>
-      <input class="form-control" type="text" name="seatno" id="seatno" readonly="readonly">
+      <input class="form-control" type="text" name="seatno" id="seatno" readonly="readonly" required >
       <p>Amount:</p>
-      <input class="form-control" type="text" name="seatamount" id="seatamount" readonly="readonly">
+      <input class="form-control" type="text" name="seatamount" id="seatamount" readonly="readonly" required>
       <p>Boarding Point:</p>
-      <select class="form-control" id="busboarding" name="busboarding">
+      <select class="form-control" id="busboarding" name="busboarding" required>
         <?php
               while($point = mysqli_fetch_assoc($boarding))
             { ?>
@@ -177,7 +177,6 @@ if (window.history.replaceState) {
       </div>
       <!-- show seat end ....... -->
       <button class="btn submitbtn " name="submit" id="submit"><b>GET TICKET</b></button><br><br>
-
       <!-- ------display from seat database------ -->
       <!-- <p> display from seat no1</p> -->
       <?php
