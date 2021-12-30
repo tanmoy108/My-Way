@@ -49,14 +49,15 @@ $(document).ready(function () {
             }
         });
     }
+
     $('#user_form').on('submit', function (event) {
         event.preventDefault();
         var busname = $('#busname').val();
-        var fromroute = $('#fromroute').val();
-        var toroute = $('#toroute').val();
+        var fromroute = $('#fromroutes').val();
+        var toroute = $('#toroutes').val();
         var dateroute = $('#dateroute').val();
-        var dtimeroute = $(time1).val();
-        var atimeroute = $(time2).val();
+        var dtimeroute = $('#dtimeroute').val();
+        var atimeroute = $('#atimeroute').val();
         var bustype = $('#bustype').val();
         var picture = $('#picture').val().split('.').pop().toLowerCase();
         if (picture != '') {
@@ -66,8 +67,7 @@ $(document).ready(function () {
                 return false;
             }
         }
-        if (busname != '' && fromroute != '' && toroute != '' && dateroute != '' && dtimeroute !=
-            '' && atimeroute != '' && bustype != '' && picture != '') {
+        if (fromroute != toroute ) {
             $.ajax({
                 url: "action.php",
                 method: "POST",
@@ -83,10 +83,11 @@ $(document).ready(function () {
                     $('#uploaded_image').html('');
                 }
             });
-        } else {
-            alert("Both Fields are Required");
+        } else if (fromroute == toroute ) {
+            alert("From route and to Route can't be same");
         }
     });
+    
 
     $(document).on('click', '.update', function () {
         var valueid = $(this).attr("id");
@@ -105,8 +106,8 @@ $(document).ready(function () {
                 // console.log("update");
                 // $('.collapse').collapse("show");
                 $('#busname').val(data.busname);
-                $('#fromroute').val(data.fromroute);
-                $('#toroute').val(data.toroute);
+                $('#fromroutes').val(data.fromroute);
+                $('#toroutes').val(data.toroute);
                 $('#dateroute').val(data.dateroute);
                 $('#dtimeroute').val(data.dtimeroute);
                 $('#atimeroute').val(data.atimeroute);
