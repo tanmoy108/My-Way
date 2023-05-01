@@ -35,7 +35,9 @@ Bus ticket.<br><br>
 <h2>Database</h2>
 MySQL will be used for Database System. Here we will use the XAMPP
 server software to create a suitable environment for testing our project
-on the local computer.
+on the local computer.</br></br>
+Admin Email: admintanmoy@gmail.com </br>
+Admin Password: 123
 <h2>IDE</h2>
 We will be using Visual Studio Code to write code for our project.
 
