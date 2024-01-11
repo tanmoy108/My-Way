@@ -41,5 +41,5 @@ Admin Password: 123
 <h2>IDE</h2>
 We will be using Visual Studio Code to write code for our project.
 
-<h2> <a href="https://drive.google.com/drive/folders/13yROTSnx_VCmzlthH-a4_EhJAa07Q-Ao?usp=sharing" alt="project pic  target="_blank"">To See Project Picture Click Here </a> </h2>
+<h2> <a href="https://drive.google.com/drive/folders/12DBfc_ijTlKCHz8RvOl6MykhVWLQppOg?usp=drive_link" alt="project pic  target="_blank"">To See Project Picture Click Here </a> </h2>
 
